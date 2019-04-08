@@ -7,7 +7,8 @@ package estruturavetor;
 
 /**
  *
- * @author bmnso
+ * @author Bruno Miguel
+    Código com método de busca binária, usando um vetor de inteiros como exemplo.
  */
 public class BuscaBin {
     int vetNum[] = {2,5,7,8,10,12,15,19,27,31,41};
@@ -28,22 +29,23 @@ public class BuscaBin {
         
         
     }
+    //método de busca binária
     public int buscabin(int b){
         //inicializa os ponteiros para busca
         int primeiro = 0;
         int tam = ultimo-1;        
         int n2=0;
-                              
-        
+                                      
         while((primeiro+n2)<ultimo){
             //imprime as partições do vetor
             for (int i = primeiro; i <= tam; i++) 
                 System.out.print(vetNum[i]+"|");            
             //calcula partição
             n2 = (tam - primeiro)/2;
-            
+            //
             System.out.print(" partindo a partir da posição: "+(primeiro+n2)+" valor: "+vetNum[primeiro+n2]);
-            System.out.println("");            
+            System.out.println(""); 
+            //caso esteja na posição central, retorna.
             if(vetNum[primeiro+n2]==b)
                     return primeiro+n2;            
             if((tam-primeiro)>0){                            
@@ -55,8 +57,8 @@ public class BuscaBin {
             }
             else
                 primeiro = ultimo; // força saída do looping
-        }        
-        return -1;
+        }//while        
+        return -1; // não encontrou
     }
     
 }
