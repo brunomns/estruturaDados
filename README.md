@@ -1,10 +1,8 @@
 # Estrutura de Dados
-Códigos da disciplina de Estrutura de Dados
+Códigos da disciplina de Estrutura de Dados - Ciência da Computação
 
-EstruturaVetor.java -> Manipulação de vetores estáticos, utilizando ponteiro "ultimo" de tipo inteiro para auxiliar no gerenciamento do vetor
+Este Repositório é dedicado à turma de Estrutura de Dados para o curso de Ciência da Computação -UENP
 
+Aqui disponibilizarei as listas de exercícios, materiais e os código-fonte desenvolvidos em sala de aula.
 
-Pessoa.java -> Classe que possui uma estrutura básica a ser manipulada pelo vetor;
-
-
-BuscaBin -> Algoritmo de busca binária;
+Bons estudos!
