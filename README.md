@@ -8,6 +8,3 @@ Pessoa.java -> Classe que possui uma estrutura básica a ser manipulada pelo vet
 
 
 BuscaBin -> Algoritmo de busca binária;
-
-
-lista1_EDCC.pdf -> Lista de Exercícios para Ciência da Computação - Entregar até dia 8 de Maio de 2019.
