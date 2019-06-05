@@ -33,20 +33,16 @@ public class EstruturaGeneric {
         Produto p2 = new Produto(2,"Mesa");
         Produto p3 = new Produto(3,"Guarda Roupa");
         Produto p4 = new Produto(4,"Rack");
+                
         
-        No<Produto> np = new No<>(p1);
-        No<Produto> np2 = new No<>(p2);
-        No<Produto> np3 = new No<>(p3);
-        No<Produto> np4 = new No<>(p4);
-        
-        lprod.insere(np);
-        lprod.insere(np2);
-        lprod.insere(np3);
-        lprod.insere(np4);
+        lprod.insere(p1);
+        lprod.insere(p2);
+        lprod.insere(p3);
+        lprod.insere(p4);
         lprod.imprimeLista();
         lprod.remove("Rack");
         lprod.imprimeLista();
-        lprod.insere(new No<Produto>(new Produto(6,"Notebook")));
+        lprod.insere((new Produto(6,"Notebook")));
         lprod.imprimeLista();
         
        

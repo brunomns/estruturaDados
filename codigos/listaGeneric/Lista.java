@@ -15,7 +15,8 @@ public class Lista<T> {
     No ultimo=null;
     
     //Metodo para inserção de um elemento na lista
-    public void insere(No<T> n){
+    public void insere(T t){
+        No<T> n = new No<>(t);
         if (primeiro==null){
             //LISTA VAZIA...
             primeiro = n;
