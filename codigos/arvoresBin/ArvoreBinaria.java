@@ -23,6 +23,17 @@ public class ArvoreBinaria {
             ab.insere(new No(vet[i]));            
         }
         ab.imprimeArvore(raiz);
+        
+        ab.remove(18);
+        System.out.println("------");
+        ab.imprimeArvore(raiz);
+        System.out.println("------");
+        ab.remove(20);
+        ab.imprimeArvore(raiz);
+        System.out.println("------");
+        ab.remove(14);
+        ab.imprimeArvore(raiz);
+        System.out.println("------");
     }
     public void insere(No n){
         if(raiz == null)
@@ -42,7 +53,7 @@ public class ArvoreBinaria {
                     }
                 }
                 else{
-                    if(aux.getFilhoDir()!=null)
+                    if(aux.getFilhoEsq()!=null)
                         aux = aux.getFilhoEsq();
                     else{
                         paiN = aux;
@@ -68,9 +79,9 @@ public class ArvoreBinaria {
             return aux;
         else{
             while(aux!=null){
-                if(aux.getValor()>val)
+                if(val > aux.getValor())
                     aux = aux.getFilhoDir();
-                else if(aux.getValor()<val)
+                else if(val < aux.getValor())
                     aux = aux.getFilhoEsq();
                 else //localizou
                     return aux;
@@ -103,7 +114,52 @@ public class ArvoreBinaria {
             }
             filho.setPai(paiR);
         }
+        else if((r.getFilhoDir() != null && r.getFilhoEsq() != null)){
+            //3 caso...possui dois filhos
+            No filER = r.getFilhoEsq();
+            No filDR = r.getFilhoDir();
+            No paiR = r.getPai();
+            No minDir = min(filDR);                        
+            
+            if(paiR != null){
+               minDir.setPai(paiR);
+               if(paiR.getFilhoDir().equals(r))
+                   paiR.setFilhoDir(minDir);
+               else
+                   paiR.setFilhoEsq(minDir);
+            }
+            else{//é o no raiz.
+                minDir.setPai(null);
+                raiz = minDir;
+            }
+            minDir.setFilhoEsq(filER);            
+            filER.setPai(minDir);
+            if(!minDir.equals(filDR)){
+                //o mínimo a direita nao é o filho a direita de R
+                if(minDir.getFilhoDir()!=null){
+                    filDR.setFilhoEsq(minDir.getFilhoDir());
+                    minDir.getFilhoDir().setPai(filDR);
+                }
+                minDir.setFilhoDir(filDR);
+                filDR.setPai(minDir);
+            }
+            r.setFilhoDir(null);
+            r.setFilhoEsq(null);
+        }
         return r;
+    }//remove
+    
+    public No min(No root){
+        No aux = root;
+        while(aux!=null){
+            if(aux.getFilhoEsq()==null)
+                return aux;
+            else
+                aux = aux.getFilhoEsq();
+        }
+        return aux;
     }
     
+    
 }
+
