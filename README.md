@@ -6,3 +6,10 @@ Este Repositório é dedicado à turma de Estrutura de Dados para o curso de Ci�
 Aqui disponibilizarei as listas de exercícios, materiais e os código-fonte desenvolvidos em sala de aula.
 
 Bons estudos!
+
+
+Links:
+
+Árvore - Vermelha e Preta:
+
+https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
