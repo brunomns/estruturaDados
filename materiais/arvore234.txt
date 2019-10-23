@@ -31,6 +31,10 @@ Remoção
     2.2) Caso os dois nós irmãos de x possuam apenas 1 item e os pais de x possuem 2 ou 3 itens
           -> Fazer a união dos seguintes nós: x, irmão a esquerda ou direita de x e pai do irmão correspondente.
           -> Executar remoção como em 1;
+    2.3) Caso os dois nós irmãos de x possuam apenas 1 item e o pai de x possua apenas 1 item:         
+          -> identificar os irmãos do pai de x, em busca de um nó com 2 ou 3 itens;
+          -> realizar a rotação com o pai de x, irmão do pai de x  (com + de 2 itens) e o avô de x (que tb é pai do irmão do pai);
+          -> após rotação, executar remoção 1 ou 2;
   3) x está em um nó interno
          - encontrar o antecessor "a" de x;
          - Trocar o Nó de x com o Nó de "a";
