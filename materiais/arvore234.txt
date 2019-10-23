@@ -1,0 +1,34 @@
+Propriedades árvores 2-3-4
+
+ - Nós folhas não tem filhos
+ - Nós internos com 1 item possuem 2 filhos sempre;
+ - Nós internos com 2 item possuem 3 filhos sempre;
+ - Nós internos com 3 item possuem 4 filhos sempre;
+ 
+Inserção
+  - Inserir sempre na folha;
+  - Ao encontrar um nó completo no caminho da inserção,
+  realizar a divisão do nó, "promovendo" a pai o item central, a irmão a direita o maior item 
+  e reorganizando os ponteiros da árvore.
+
+Remoção
+
+- A remoção deve ocorrer em um nó folha;
+- Caso o item a ser removido não esteja na folha, realizar as trocas necessárias para deixá-lo como folha e então realizar a remoção.
+
+  Casos de remoção de um nó x
+  
+  Se x está em um nó folha:
+  
+  1) x está em um nó com 2 ou 3 itens:
+    Nó ficará com 1 (se possuia 2 itens) ou 2 itens;
+  2) x está em um nó com 1 item. 
+    A remoção implica em forçar um erro na árvore.
+    2.1) x é filho de um nó de 2 ou 3 itens
+          -> Converter o nó de x em um nó com 2 itens usando rotação a esquerda ou a direita 
+          (dependendo da quantidade de itens dos nós irmãos de x;)
+          -> Após rotações, realizar a remoção do caso 1;
+    2.2) Caso os dois nós irmãos de x possuam apenas 1 item e os pais de x possuem 2 ou 3 itens
+          -> Fazer a união dos seguintes nós: x, irmão a esquerda ou direita de x e pai do irmão correspondente.
+          -> Executar remoção como em 1;
+          
