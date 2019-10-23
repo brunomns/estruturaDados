@@ -24,7 +24,7 @@ Remoção
     Nó ficará com 1 (se possuia 2 itens) ou 2 itens;
   2) x está em um nó com 1 item. 
     A remoção implica em forçar um erro na árvore.
-    2.1) x é filho de um nó de 2 ou 3 itens
+    2.1) x é filho de um nó de 2 ou 3 itens e pelo menos um de seus irmãos possui 2 ou 3 itens;
           -> Converter o nó de x em um nó com 2 itens usando rotação a esquerda ou a direita 
           (dependendo da quantidade de itens dos nós irmãos de x;)
           -> Após rotações, realizar a remoção do caso 1;
