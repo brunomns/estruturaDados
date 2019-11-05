@@ -12,4 +12,7 @@ https://yongdanielliang.github.io/animation/web/24Tree.html
 Partições<br>
 http://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-ig-ppc-multi-pt_br-4/ap-partitions.html
 
+Árvores-B
+https://www.ime.usp.br/~pf/estruturas-de-dados/aulas/B-trees.html
+
 
