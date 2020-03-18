@@ -22,6 +22,35 @@ public class VetorMatriz {
                         {3,4,5},
                         {6,7,8}};
         
+        //Realizar a soma de todos os elementos da matriz e retornar o valor resultante.
+        
+        int somador =0;
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                System.out.print(mat[i][j]+"|"); 
+                somador = somador + mat[i][j];
+            }
+            System.out.println("");            
+        }
+        
+        System.out.println(" SOMA: "+ somador);
+        
+        int mat2[][] = { {9,10,11},
+                        {12,13,14},
+                        {15,16,17}};
+        
+        int soma[][] = new int[3][3];
+        System.out.println("Matriz somando duas matrizes...");
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[0].length; j++) {
+                soma[i][j] = mat[i][j] + mat2[i][j];
+                System.out.print(soma[i][j]+"|");
+            }            
+            System.out.println("");
+        }
+        
+        
+        /*
         int matInt[][] = new int[4][4];
         for (int i = 0; i < matInt.length; i++) {
             for (int j = 0; j < matInt[0].length; j++) {
@@ -30,7 +59,7 @@ public class VetorMatriz {
             }
             System.out.println("");
             
-        }
+        }*/
         
     }
 }
