@@ -1,6 +1,6 @@
 public class Principal {
     public static void main(String[] args) {
-        ListaEncadeadaDinamica listaLivros = new ListaEncadeadaDinamica();
+        ListaEncadeadaDinamicaDupla listaLivros = new ListaEncadeadaDinamicaDupla();
 
         Livro l1 = new Livro("Estrutura", "LAFORE");
         Livro l2 = new Livro("Algoritmos", "CORMEN");
