@@ -1,0 +1,110 @@
+import java.sql.SQLOutput;
+
+public class ListaEncadeadaDinamicaDupla {
+    // DUPLAMENTE ENCADEADA
+
+    No inicio;
+    No fim;
+
+    //metodo de insercao
+    public void insereFim(No n){
+        //verificar se lista vazia?
+        if (inicio == null){
+            //lista vazia
+            inicio = n;
+            fim = n;
+        }
+        else{
+            //ultimo elemento q esta na lista
+            //apontara para o novo elemento
+            // A -> B
+            fim.setProximo(n);
+            // A <- B
+            n.setAnterior(fim);
+            //atualiza o ponteiro fim para o novo elemento
+            fim = n;
+        }
+        System.out.println("Elemento inserido com sucesso: "+n.toString());
+    }
+
+    //percorrer a lista e imprimir os elementos
+    public void imprimeLista(){
+        No aux = inicio;
+        System.out.println(" === IMPRIMINDO LISTA ===");
+        // inicio -> 1 -> 2 -> 4 -> 9 -> 7 <- fim
+
+        while (aux!=null){
+            System.out.print(aux.hashCode()+ " - ");
+            System.out.print(aux.toString());
+            if (aux.getAnterior()!=null)
+                System.out.print("| ponteiro anterior -> "+aux.getAnterior().hashCode());
+            if (aux.getProximo()!=null)
+                System.out.print("| ponteiro proximo -> "+ aux.getProximo().hashCode());
+            //move o ponteiro aux para a proxima posicao
+            System.out.println();
+            System.out.println("----------------------");
+            aux = aux.getProximo();
+        }
+    }
+
+    public No remove(String texto){
+        No rem = inicio;
+
+        while (rem!=null){
+            if (rem.toString().contains(texto)){
+                // encontramos o elemento a ser removido
+                if (rem.getAnterior()!=null){
+                    // quero remover o item C
+                    // A -> C ->  B
+                    // A <- C  <- B
+                    // rem = C | anterior = A | proximo = B
+
+                    No anterior = rem.getAnterior();
+                    // A -> B
+                    anterior.setProximo(rem.getProximo());
+
+                    // A  <- B
+                    if (rem.getProximo()!=null) {
+                        No proximo = rem.getProximo();
+                        proximo.setAnterior(rem.getAnterior());
+                    }
+                    if (rem == fim){
+                        fim = anterior;
+                    }
+                    rem.setProximo(null);
+                    System.out.println("Elemento removido. "+rem.toString());
+                    return rem;
+                }
+                else{
+                    //inicio da lista
+                    // remover A
+                    // inicio -> A -> B -> C <- fim
+                    // inicio -> A <- B <- C <- fim
+                    inicio = rem.getProximo();
+                    inicio.setAnterior(null);
+                    if (fim == rem){
+                        fim = rem.getProximo();
+                    }
+                    rem.setProximo(null);
+                    System.out.println("Elemento removido. "+rem.toString());
+                    return rem;
+                }
+            }
+            rem = rem.getProximo();
+        }
+        System.out.println("Elemento nao encontrado para remocao ");
+        return null;
+    }
+
+    public No busca(String buscar){
+        No aux = inicio;
+        while(aux!=null){
+            if (aux.toString().contains(buscar)){
+                return aux;
+            }
+            aux = aux.getProximo();
+        }
+        return null;
+    }
+
+}
