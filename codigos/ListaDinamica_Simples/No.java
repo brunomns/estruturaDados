@@ -4,8 +4,6 @@ public class No {
     Object obj;
     //ponteiro para o proximo elemento
     No proximo;
-    //ponteiro para o elemento anterior
-    No anterior;
 
     public No(Object o){
         obj = o;
@@ -24,13 +22,6 @@ public class No {
     }
     public No getProximo(){
         return proximo;
-    }
-
-    public void setAnterior(No n){
-        anterior = n;
-    }
-    public No getAnterior(){
-        return anterior;
     }
 
 }
